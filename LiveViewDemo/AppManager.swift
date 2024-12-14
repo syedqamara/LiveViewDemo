@@ -12,11 +12,13 @@ class AppManager: ObservableObject {
     @Published var isLoading: Bool = false
     @Published var alert: AlertContent? = nil
     
+    // Safely using Singleton Classes
     @Singleton var singleton
     
     var cancellables: Set<AnyCancellable> = .init()
     
     func setup() {
+        // Connect the global binding of alert & loading listener
         singleton
             .loadingPublisher
             .receive(on: DispatchQueue.main)
