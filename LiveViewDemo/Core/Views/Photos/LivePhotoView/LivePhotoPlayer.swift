@@ -21,21 +21,7 @@ class LivePhotoPlayer: UIView, PHLivePhotoViewDelegate {
         button.backgroundColor = UIColor.black.withAlphaComponent(0.6)
         return button
     }()
-    private let imageView: UIImageView = {
-        let img = UIImageView()
-        img.image = UIImage(systemName: "play.circle")
-        img.tintColor = .white
-        img.translatesAutoresizingMaskIntoConstraints = false
-        return img
-    }()
-    private var __flag_for_live_preview = false
-    private var isPlaying: Bool {
-        get { __flag_for_live_preview }
-        set {
-            imageView.isHidden = newValue
-            __flag_for_live_preview = newValue
-        }
-    }
+    private var isPlaying: Bool = false
 
     // MARK: - Initializer
     init(photo: PHLivePhoto) {
@@ -54,10 +40,14 @@ class LivePhotoPlayer: UIView, PHLivePhotoViewDelegate {
     private func setupViews() {
         addSubview(livePhotoView)
         addSubview(playButton)
-        addSubview(imageView)
+        
+        playButton.addLongPressGesture(minimumPressDuration: 0.5) { [weak self] in
+            self?.playButtonPressed()
+        } onPressEnd: { [weak self] in
+            self?.playButtonReleased()
+        }
 
-        playButton.addTarget(self, action: #selector(playButtonPressed), for: .touchDown)
-        playButton.addTarget(self, action: #selector(playButtonReleased), for: [.touchUpInside, .touchUpOutside])
+        
     }
 
     private func setupConstraints() {
@@ -68,11 +58,6 @@ class LivePhotoPlayer: UIView, PHLivePhotoViewDelegate {
             livePhotoView.leadingAnchor.constraint(equalTo: leadingAnchor),
             livePhotoView.trailingAnchor.constraint(equalTo: trailingAnchor),
             livePhotoView.bottomAnchor.constraint(equalTo: bottomAnchor),
-
-            imageView.centerXAnchor.constraint(equalTo: centerXAnchor),
-            imageView.centerYAnchor.constraint(equalTo: centerYAnchor),
-            imageView.widthAnchor.constraint(equalToConstant: 64),
-            imageView.heightAnchor.constraint(equalToConstant: 64),
             
             playButton.centerXAnchor.constraint(equalTo: centerXAnchor),
             playButton.centerYAnchor.constraint(equalTo: centerYAnchor),
@@ -84,20 +69,18 @@ class LivePhotoPlayer: UIView, PHLivePhotoViewDelegate {
     // MARK: - Actions
     @objc private func playButtonPressed() {
         isPlaying = true
-        playButton.isHidden = true
         livePhotoView.startPlayback(with: .full)
     }
 
     @objc private func playButtonReleased() {
         if isPlaying {
-            playButton.isHidden = false
             isPlaying = false
+            livePhotoView.stopPlayback()
         }
     }
 
     // MARK: - PHLivePhotoViewDelegate
     func livePhotoView(_ livePhotoView: PHLivePhotoView, didEndPlaybackWith playbackStyle: PHLivePhotoViewPlaybackStyle) {
-        playButton.isHidden = false
         isPlaying = false
     }
 }

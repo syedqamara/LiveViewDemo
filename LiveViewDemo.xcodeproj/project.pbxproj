@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		184F6DFA2D10C5BD00789DD9 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184F6DF92D10C5BD00789DD9 /* Environment.swift */; };
 		18EBC91D2D0CC84600AED37C /* LiveViewDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EBC91C2D0CC84600AED37C /* LiveViewDemoApp.swift */; };
 		18EBC91F2D0CC84600AED37C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EBC91E2D0CC84600AED37C /* ContentView.swift */; };
 		18EBC9212D0CC84800AED37C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18EBC9202D0CC84800AED37C /* Assets.xcassets */; };
@@ -59,6 +60,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		184F6DF92D10C5BD00789DD9 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		18EBC9192D0CC84600AED37C /* LiveViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LiveViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18EBC91C2D0CC84600AED37C /* LiveViewDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveViewDemoApp.swift; sourceTree = "<group>"; };
 		18EBC91E2D0CC84600AED37C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 				18EBC9952D0E27FE00AED37C /* AlertView.swift */,
 				18EBC9972D0E38BF00AED37C /* AnimatedLoading.swift */,
 				18EBC99D2D0E400600AED37C /* Singleton.swift */,
+				184F6DF92D10C5BD00789DD9 /* Environment.swift */,
 				18EBC9A12D0E498400AED37C /* CircularProgressView.swift */,
 			);
 			path = core;
@@ -431,6 +434,7 @@
 				18EBC95C2D0CC9F200AED37C /* ViewFactory.swift in Sources */,
 				18EBC97F2D0DED6200AED37C /* Logger.swift in Sources */,
 				18EBC91D2D0CC84600AED37C /* LiveViewDemoApp.swift in Sources */,
+				184F6DFA2D10C5BD00789DD9 /* Environment.swift in Sources */,
 				18EBC9912D0E265600AED37C /* ExampleBundleLivePhoto.swift in Sources */,
 				18EBC9602D0CCA0800AED37C /* Core.swift in Sources */,
 				18EBC9A22D0E498400AED37C /* CircularProgressView.swift in Sources */,

@@ -34,12 +34,12 @@ class SingletonImplementation: SingletonProtocol {
 
 
 @propertyWrapper
-struct Singleton<S: SingletonProtocol> {
-    private var singleton: S
-    init(singleton: S = SingletonImplementation.shared) {
+struct Singleton {
+    private var singleton: SingletonProtocol
+    init(singleton: SingletonProtocol = SingletonImplementation.shared) {
         self.singleton = singleton
     }
-    var wrappedValue: S {
+    var wrappedValue: SingletonProtocol {
         singleton
     }
 }
