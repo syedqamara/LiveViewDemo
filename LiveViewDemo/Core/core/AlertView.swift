@@ -32,10 +32,12 @@ public struct AlertContent: Identifiable {
     public let title: String
     public let subtitle: String
     public let image: String?
-    public init(title: String, subtitle: String, image: String? = nil) {
+    public let design: AlertDesign?
+    public init(title: String, subtitle: String, image: String? = nil, design: AlertDesign? = nil) {
         self.title = title
         self.subtitle = subtitle
         self.image = image
+        self.design = design
     }
 }
 
@@ -67,6 +69,28 @@ public struct AlertDesign {
             )
         )
     }
+    static public var success: AlertDesign {
+        AlertDesign(
+            title: TextualDesign(
+                color: .green,
+                font: .largeTitle.bold()
+            ),
+            subtitle: TextualDesign(
+                color: .green,
+                font: .title
+            ),
+            cross: ButtonDesign(
+                background: .green.opacity(0.25),
+                color: .green,
+                font: .body
+            ),
+            ok: ButtonDesign(
+                background: .green.opacity(0.25),
+                color: .green,
+                font: .largeTitle.bold()
+            )
+        )
+    }
 }
 
 public struct AlertView: View {
@@ -79,7 +103,11 @@ public struct AlertView: View {
     public init(alert: AlertContent, isPresented: Binding<Bool>, design: AlertDesign = .error) {
         self.alert = alert
         _isPresented = isPresented
-        self.design = design
+        if let alertDesign = alert.design {
+            self.design = alertDesign
+        } else {
+            self.design = design
+        }
     }
     // MARK: - Body
     public var body: some View {
@@ -155,7 +183,7 @@ struct AlertView_Previews: PreviewProvider {
         AlertView(
             alert: AlertContent(
                 title: "Example",
-                subtitle: "laksdhla dha sdhjkas dkjahs dajkhdk ajk djh ajksdj ajk sdh"
+                subtitle: "laksdhla dha sdhjkas dkjahs dajkhdk ajk djh ajksdj ajk sdh", design: .success
             ),
             isPresented: .constant(true)
         )

@@ -83,7 +83,9 @@ public extension AlertContent {
         self.title = error.code
         self.subtitle = error.localizedDescription
         self.image = nil
+        self.design = nil
     }
+    
 }
 
 

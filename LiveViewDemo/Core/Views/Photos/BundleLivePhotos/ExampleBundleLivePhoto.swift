@@ -22,7 +22,21 @@ struct ExampleBundleLivePhoto<VM: ExampleBundleLiveImageViewModelProtocol>: View
                     if livePhoto.progress < 100 {
                         CircularProgressView(conversion: $viewModel.livePhoto, message: "Converting")
                     } else if let content = livePhoto.content?.photo {
-                        LivePhotoContentView(photo: content)
+                        VStack {
+                            LivePhotoContentView(photo: content)
+                            Button {
+                                viewModel.save()
+                            } label: {
+                                Text("Save")
+                                    .font(.largeTitle.bold())
+                                    .foregroundStyle(.white)
+                            }
+                            .padding(.horizontal)
+                            .frame(height: 40)
+                            .background(.green)
+
+                        }
+                        
                     }
                 }
                 .padding()
