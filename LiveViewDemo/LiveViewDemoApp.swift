@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-
+import live_view
 
 @main
 struct LiveViewDemoApp: App {
@@ -33,10 +33,11 @@ struct LiveViewDemoApp: App {
             .fullScreenCover(item: $appManager.alert) { content in
                 viewFactory.swiftUI(input: .alert(content, $isAlertDismissed))
             }
-            // Binding Global Loading View to display loading from any where
-            .fullScreenCover(isPresented: $appManager.isLoading, content: {
-                viewFactory.swiftUI(input: .loading("Please wait"))
-            })
+            .overlay(alignment: .center) {
+                if appManager.isLoading {
+                    viewFactory.swiftUI(input: .loading("Please wait"))
+                }
+            }
         }
     }
 }

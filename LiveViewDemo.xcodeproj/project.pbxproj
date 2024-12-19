@@ -7,7 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		184F6DFA2D10C5BD00789DD9 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184F6DF92D10C5BD00789DD9 /* Environment.swift */; };
+		184F6DFD2D121B5400789DD9 /* live_view in Frameworks */ = {isa = PBXBuildFile; productRef = 184F6DFC2D121B5400789DD9 /* live_view */; };
+		184F6E002D1352B900789DD9 /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = 184F6DFF2D1352B900789DD9 /* FirebaseCore */; };
+		184F6E022D1352B900789DD9 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 184F6E012D1352B900789DD9 /* FirebaseStorage */; };
+		184F6E042D1352B900789DD9 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 184F6E032D1352B900789DD9 /* FirebaseStorageCombine-Community */; };
+		184F6E072D13604C00789DD9 /* FirebaseConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184F6E062D13604C00789DD9 /* FirebaseConnector.swift */; };
+		184F6E092D13629A00789DD9 /* FirebaseLivePhotoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184F6E082D13629A00789DD9 /* FirebaseLivePhotoManager.swift */; };
+		184F6E0B2D136D1600789DD9 /* FirebaseSDK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184F6E0A2D136D1600789DD9 /* FirebaseSDK.swift */; };
 		18EBC91D2D0CC84600AED37C /* LiveViewDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EBC91C2D0CC84600AED37C /* LiveViewDemoApp.swift */; };
 		18EBC91F2D0CC84600AED37C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EBC91E2D0CC84600AED37C /* ContentView.swift */; };
 		18EBC9212D0CC84800AED37C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18EBC9202D0CC84800AED37C /* Assets.xcassets */; };
@@ -17,29 +23,9 @@
 		18EBC9332D0CC84800AED37C /* LiveViewDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EBC9322D0CC84800AED37C /* LiveViewDemoTests.swift */; };
 		18EBC93D2D0CC84900AED37C /* LiveViewDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EBC93C2D0CC84900AED37C /* LiveViewDemoUITests.swift */; };
 		18EBC93F2D0CC84900AED37C /* LiveViewDemoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EBC93E2D0CC84900AED37C /* LiveViewDemoUITestsLaunchTests.swift */; };
-		18EBC95C2D0CC9F200AED37C /* ViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EBC9532D0CC9F200AED37C /* ViewFactory.swift */; };
-		18EBC9602D0CCA0800AED37C /* Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EBC95F2D0CCA0800AED37C /* Core.swift */; };
-		18EBC9642D0CCA4400AED37C /* ViewFactory+Photos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EBC9632D0CCA4400AED37C /* ViewFactory+Photos.swift */; };
-		18EBC9692D0CD40E00AED37C /* HEICLiveImageProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EBC9682D0CD40D00AED37C /* HEICLiveImageProvider.swift */; };
 		18EBC96D2D0CD6EE00AED37C /* live_photo_example.HEIC in Resources */ = {isa = PBXBuildFile; fileRef = 18EBC96B2D0CD6ED00AED37C /* live_photo_example.HEIC */; };
 		18EBC96E2D0CD6EE00AED37C /* live_photo_example.MOV in Resources */ = {isa = PBXBuildFile; fileRef = 18EBC96C2D0CD6ED00AED37C /* live_photo_example.MOV */; };
-		18EBC9742D0CE15000AED37C /* LivePhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EBC9732D0CE15000AED37C /* LivePhoto.swift */; };
-		18EBC9772D0CE4F100AED37C /* LivePhotoContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EBC9762D0CE4F100AED37C /* LivePhotoContentView.swift */; };
-		18EBC97F2D0DED6200AED37C /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EBC97E2D0DED6200AED37C /* Logger.swift */; };
-		18EBC9812D0DF44900AED37C /* Logs+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EBC9802D0DF44900AED37C /* Logs+Ext.swift */; };
-		18EBC9832D0DF95700AED37C /* LivePhotoConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EBC9822D0DF95700AED37C /* LivePhotoConverter.swift */; };
-		18EBC9872D0E130500AED37C /* LivePhotoSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EBC9862D0E130500AED37C /* LivePhotoSaver.swift */; };
-		18EBC9892D0E1A0800AED37C /* LivePhotoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EBC9882D0E1A0800AED37C /* LivePhotoManager.swift */; };
-		18EBC98B2D0E20C900AED37C /* ImageRetriever.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EBC98A2D0E20C900AED37C /* ImageRetriever.swift */; };
-		18EBC98E2D0E255B00AED37C /* LivePhotoPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EBC98D2D0E255B00AED37C /* LivePhotoPlayer.swift */; };
-		18EBC9912D0E265600AED37C /* ExampleBundleLivePhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EBC9902D0E265600AED37C /* ExampleBundleLivePhoto.swift */; };
-		18EBC9942D0E268F00AED37C /* ExampleBundleLiveImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EBC9932D0E268F00AED37C /* ExampleBundleLiveImageViewModel.swift */; };
-		18EBC9962D0E27FE00AED37C /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EBC9952D0E27FE00AED37C /* AlertView.swift */; };
-		18EBC9982D0E38BF00AED37C /* AnimatedLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EBC9972D0E38BF00AED37C /* AnimatedLoading.swift */; };
 		18EBC99C2D0E3FF300AED37C /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EBC99B2D0E3FF300AED37C /* AppManager.swift */; };
-		18EBC99E2D0E400600AED37C /* Singleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EBC99D2D0E400600AED37C /* Singleton.swift */; };
-		18EBC9A02D0E42AC00AED37C /* ViewFactory+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EBC99F2D0E42AC00AED37C /* ViewFactory+App.swift */; };
-		18EBC9A22D0E498400AED37C /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EBC9A12D0E498400AED37C /* CircularProgressView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,7 +46,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		184F6DF92D10C5BD00789DD9 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		184F6E062D13604C00789DD9 /* FirebaseConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseConnector.swift; sourceTree = "<group>"; };
+		184F6E082D13629A00789DD9 /* FirebaseLivePhotoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseLivePhotoManager.swift; sourceTree = "<group>"; };
+		184F6E0A2D136D1600789DD9 /* FirebaseSDK.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseSDK.swift; sourceTree = "<group>"; };
 		18EBC9192D0CC84600AED37C /* LiveViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LiveViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18EBC91C2D0CC84600AED37C /* LiveViewDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveViewDemoApp.swift; sourceTree = "<group>"; };
 		18EBC91E2D0CC84600AED37C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -73,29 +61,9 @@
 		18EBC9382D0CC84900AED37C /* LiveViewDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LiveViewDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		18EBC93C2D0CC84900AED37C /* LiveViewDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveViewDemoUITests.swift; sourceTree = "<group>"; };
 		18EBC93E2D0CC84900AED37C /* LiveViewDemoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveViewDemoUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		18EBC9532D0CC9F200AED37C /* ViewFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewFactory.swift; sourceTree = "<group>"; };
-		18EBC95F2D0CCA0800AED37C /* Core.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Core.swift; sourceTree = "<group>"; };
-		18EBC9632D0CCA4400AED37C /* ViewFactory+Photos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewFactory+Photos.swift"; sourceTree = "<group>"; };
-		18EBC9682D0CD40D00AED37C /* HEICLiveImageProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HEICLiveImageProvider.swift; sourceTree = "<group>"; };
 		18EBC96B2D0CD6ED00AED37C /* live_photo_example.HEIC */ = {isa = PBXFileReference; lastKnownFileType = file; path = live_photo_example.HEIC; sourceTree = "<group>"; };
 		18EBC96C2D0CD6ED00AED37C /* live_photo_example.MOV */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = live_photo_example.MOV; sourceTree = "<group>"; };
-		18EBC9732D0CE15000AED37C /* LivePhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LivePhoto.swift; sourceTree = "<group>"; };
-		18EBC9762D0CE4F100AED37C /* LivePhotoContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LivePhotoContentView.swift; sourceTree = "<group>"; };
-		18EBC97E2D0DED6200AED37C /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
-		18EBC9802D0DF44900AED37C /* Logs+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Logs+Ext.swift"; sourceTree = "<group>"; };
-		18EBC9822D0DF95700AED37C /* LivePhotoConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LivePhotoConverter.swift; sourceTree = "<group>"; };
-		18EBC9862D0E130500AED37C /* LivePhotoSaver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LivePhotoSaver.swift; sourceTree = "<group>"; };
-		18EBC9882D0E1A0800AED37C /* LivePhotoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LivePhotoManager.swift; sourceTree = "<group>"; };
-		18EBC98A2D0E20C900AED37C /* ImageRetriever.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageRetriever.swift; sourceTree = "<group>"; };
-		18EBC98D2D0E255B00AED37C /* LivePhotoPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LivePhotoPlayer.swift; sourceTree = "<group>"; };
-		18EBC9902D0E265600AED37C /* ExampleBundleLivePhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleBundleLivePhoto.swift; sourceTree = "<group>"; };
-		18EBC9932D0E268F00AED37C /* ExampleBundleLiveImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleBundleLiveImageViewModel.swift; sourceTree = "<group>"; };
-		18EBC9952D0E27FE00AED37C /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
-		18EBC9972D0E38BF00AED37C /* AnimatedLoading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedLoading.swift; sourceTree = "<group>"; };
 		18EBC99B2D0E3FF300AED37C /* AppManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppManager.swift; sourceTree = "<group>"; };
-		18EBC99D2D0E400600AED37C /* Singleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Singleton.swift; sourceTree = "<group>"; };
-		18EBC99F2D0E42AC00AED37C /* ViewFactory+App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewFactory+App.swift"; sourceTree = "<group>"; };
-		18EBC9A12D0E498400AED37C /* CircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +71,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				184F6E002D1352B900789DD9 /* FirebaseCore in Frameworks */,
+				184F6DFD2D121B5400789DD9 /* live_view in Frameworks */,
+				184F6E042D1352B900789DD9 /* FirebaseStorageCombine-Community in Frameworks */,
+				184F6E022D1352B900789DD9 /* FirebaseStorage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -123,6 +95,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		184F6E052D13604500789DD9 /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				184F6E062D13604C00789DD9 /* FirebaseConnector.swift */,
+				184F6E082D13629A00789DD9 /* FirebaseLivePhotoManager.swift */,
+				184F6E0A2D136D1600789DD9 /* FirebaseSDK.swift */,
+			);
+			path = Firebase;
+			sourceTree = "<group>";
+		};
 		18EBC9102D0CC84600AED37C = {
 			isa = PBXGroup;
 			children = (
@@ -148,8 +130,8 @@
 			children = (
 				18EBC91C2D0CC84600AED37C /* LiveViewDemoApp.swift */,
 				18EBC99B2D0E3FF300AED37C /* AppManager.swift */,
+				184F6E052D13604500789DD9 /* Firebase */,
 				18EBC96A2D0CD6E400AED37C /* Resources */,
-				18EBC9592D0CC9F200AED37C /* Core */,
 				18EBC91E2D0CC84600AED37C /* ContentView.swift */,
 				18EBC9202D0CC84800AED37C /* Assets.xcassets */,
 				18EBC9252D0CC84800AED37C /* Persistence.swift */,
@@ -184,64 +166,6 @@
 			path = LiveViewDemoUITests;
 			sourceTree = "<group>";
 		};
-		18EBC9542D0CC9F200AED37C /* core */ = {
-			isa = PBXGroup;
-			children = (
-				18EBC9822D0DF95700AED37C /* LivePhotoConverter.swift */,
-				18EBC9862D0E130500AED37C /* LivePhotoSaver.swift */,
-				18EBC9732D0CE15000AED37C /* LivePhoto.swift */,
-				18EBC9882D0E1A0800AED37C /* LivePhotoManager.swift */,
-				18EBC95F2D0CCA0800AED37C /* Core.swift */,
-				18EBC9802D0DF44900AED37C /* Logs+Ext.swift */,
-				18EBC97E2D0DED6200AED37C /* Logger.swift */,
-				18EBC9532D0CC9F200AED37C /* ViewFactory.swift */,
-				18EBC9952D0E27FE00AED37C /* AlertView.swift */,
-				18EBC9972D0E38BF00AED37C /* AnimatedLoading.swift */,
-				18EBC99D2D0E400600AED37C /* Singleton.swift */,
-				184F6DF92D10C5BD00789DD9 /* Environment.swift */,
-				18EBC9A12D0E498400AED37C /* CircularProgressView.swift */,
-			);
-			path = core;
-			sourceTree = "<group>";
-		};
-		18EBC9582D0CC9F200AED37C /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				18EBC9612D0CCA2700AED37C /* Photos */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		18EBC9592D0CC9F200AED37C /* Core */ = {
-			isa = PBXGroup;
-			children = (
-				18EBC9622D0CCA3800AED37C /* ViewFactory */,
-				18EBC98C2D0E234D00AED37C /* ImageProviders */,
-				18EBC9542D0CC9F200AED37C /* core */,
-				18EBC9582D0CC9F200AED37C /* Views */,
-			);
-			path = Core;
-			sourceTree = "<group>";
-		};
-		18EBC9612D0CCA2700AED37C /* Photos */ = {
-			isa = PBXGroup;
-			children = (
-				18EBC98F2D0E264300AED37C /* BundleLivePhotos */,
-				18EBC9752D0CE4E800AED37C /* LivePhotoView */,
-			);
-			path = Photos;
-			sourceTree = "<group>";
-		};
-		18EBC9622D0CCA3800AED37C /* ViewFactory */ = {
-			isa = PBXGroup;
-			children = (
-				18EBC9632D0CCA4400AED37C /* ViewFactory+Photos.swift */,
-				18EBC99F2D0E42AC00AED37C /* ViewFactory+App.swift */,
-				18EBC98A2D0E20C900AED37C /* ImageRetriever.swift */,
-			);
-			path = ViewFactory;
-			sourceTree = "<group>";
-		};
 		18EBC96A2D0CD6E400AED37C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -249,32 +173,6 @@
 				18EBC96C2D0CD6ED00AED37C /* live_photo_example.MOV */,
 			);
 			path = Resources;
-			sourceTree = "<group>";
-		};
-		18EBC9752D0CE4E800AED37C /* LivePhotoView */ = {
-			isa = PBXGroup;
-			children = (
-				18EBC9762D0CE4F100AED37C /* LivePhotoContentView.swift */,
-				18EBC98D2D0E255B00AED37C /* LivePhotoPlayer.swift */,
-			);
-			path = LivePhotoView;
-			sourceTree = "<group>";
-		};
-		18EBC98C2D0E234D00AED37C /* ImageProviders */ = {
-			isa = PBXGroup;
-			children = (
-				18EBC9682D0CD40D00AED37C /* HEICLiveImageProvider.swift */,
-			);
-			path = ImageProviders;
-			sourceTree = "<group>";
-		};
-		18EBC98F2D0E264300AED37C /* BundleLivePhotos */ = {
-			isa = PBXGroup;
-			children = (
-				18EBC9902D0E265600AED37C /* ExampleBundleLivePhoto.swift */,
-				18EBC9932D0E268F00AED37C /* ExampleBundleLiveImageViewModel.swift */,
-			);
-			path = BundleLivePhotos;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -294,6 +192,10 @@
 			);
 			name = LiveViewDemo;
 			packageProductDependencies = (
+				184F6DFC2D121B5400789DD9 /* live_view */,
+				184F6DFF2D1352B900789DD9 /* FirebaseCore */,
+				184F6E012D1352B900789DD9 /* FirebaseStorage */,
+				184F6E032D1352B900789DD9 /* FirebaseStorageCombine-Community */,
 			);
 			productName = LiveViewDemo;
 			productReference = 18EBC9192D0CC84600AED37C /* LiveViewDemo.app */;
@@ -368,6 +270,8 @@
 			);
 			mainGroup = 18EBC9102D0CC84600AED37C;
 			packageReferences = (
+				184F6DFB2D121B5400789DD9 /* XCRemoteSwiftPackageReference "live_view" */,
+				184F6DFE2D1352B900789DD9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 18EBC91A2D0CC84600AED37C /* Products */;
 			projectDirPath = "";
@@ -413,32 +317,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18EBC9872D0E130500AED37C /* LivePhotoSaver.swift in Sources */,
-				18EBC9942D0E268F00AED37C /* ExampleBundleLiveImageViewModel.swift in Sources */,
-				18EBC9962D0E27FE00AED37C /* AlertView.swift in Sources */,
-				18EBC9892D0E1A0800AED37C /* LivePhotoManager.swift in Sources */,
+				184F6E092D13629A00789DD9 /* FirebaseLivePhotoManager.swift in Sources */,
 				18EBC9262D0CC84800AED37C /* Persistence.swift in Sources */,
-				18EBC9742D0CE15000AED37C /* LivePhoto.swift in Sources */,
-				18EBC9642D0CCA4400AED37C /* ViewFactory+Photos.swift in Sources */,
+				184F6E072D13604C00789DD9 /* FirebaseConnector.swift in Sources */,
 				18EBC99C2D0E3FF300AED37C /* AppManager.swift in Sources */,
-				18EBC98E2D0E255B00AED37C /* LivePhotoPlayer.swift in Sources */,
 				18EBC9292D0CC84800AED37C /* LiveViewDemo.xcdatamodeld in Sources */,
-				18EBC9832D0DF95700AED37C /* LivePhotoConverter.swift in Sources */,
-				18EBC9692D0CD40E00AED37C /* HEICLiveImageProvider.swift in Sources */,
 				18EBC91F2D0CC84600AED37C /* ContentView.swift in Sources */,
-				18EBC9982D0E38BF00AED37C /* AnimatedLoading.swift in Sources */,
-				18EBC99E2D0E400600AED37C /* Singleton.swift in Sources */,
-				18EBC9812D0DF44900AED37C /* Logs+Ext.swift in Sources */,
-				18EBC98B2D0E20C900AED37C /* ImageRetriever.swift in Sources */,
-				18EBC9772D0CE4F100AED37C /* LivePhotoContentView.swift in Sources */,
-				18EBC95C2D0CC9F200AED37C /* ViewFactory.swift in Sources */,
-				18EBC97F2D0DED6200AED37C /* Logger.swift in Sources */,
 				18EBC91D2D0CC84600AED37C /* LiveViewDemoApp.swift in Sources */,
-				184F6DFA2D10C5BD00789DD9 /* Environment.swift in Sources */,
-				18EBC9912D0E265600AED37C /* ExampleBundleLivePhoto.swift in Sources */,
-				18EBC9602D0CCA0800AED37C /* Core.swift in Sources */,
-				18EBC9A22D0E498400AED37C /* CircularProgressView.swift in Sources */,
-				18EBC9A02D0E42AC00AED37C /* ViewFactory+App.swift in Sources */,
+				184F6E0B2D136D1600789DD9 /* FirebaseSDK.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -770,6 +656,48 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		184F6DFB2D121B5400789DD9 /* XCRemoteSwiftPackageReference "live_view" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/syedqamara/live_view";
+			requirement = {
+				kind = exactVersion;
+				version = 1.0.10;
+			};
+		};
+		184F6DFE2D1352B900789DD9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.6.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		184F6DFC2D121B5400789DD9 /* live_view */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 184F6DFB2D121B5400789DD9 /* XCRemoteSwiftPackageReference "live_view" */;
+			productName = live_view;
+		};
+		184F6DFF2D1352B900789DD9 /* FirebaseCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 184F6DFE2D1352B900789DD9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCore;
+		};
+		184F6E012D1352B900789DD9 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 184F6DFE2D1352B900789DD9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+		184F6E032D1352B900789DD9 /* FirebaseStorageCombine-Community */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 184F6DFE2D1352B900789DD9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseStorageCombine-Community";
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		18EBC9272D0CC84800AED37C /* LiveViewDemo.xcdatamodeld */ = {
