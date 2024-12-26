@@ -55,7 +55,7 @@ class AppManager: ObservableObject {
             }
             .store(in: &cancellables)
         
-        setupThirdParty()
+//        setupThirdParty()
     }
     
 }

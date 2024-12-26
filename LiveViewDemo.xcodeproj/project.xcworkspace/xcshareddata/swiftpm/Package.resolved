@@ -1,5 +1,5 @@
 {
-  "originHash" : "5c6fc7641bfe1e61656fd39367b79ab6c3fb16bad9bb9633dfe40088c93bc623",
+  "originHash" : "a1569f9895aa2be8e24832f98525d5da4eb90b5d158a82691c15b47eb72a13d7",
   "pins" : [
     {
       "identity" : "abseil-cpp-binary",
@@ -89,15 +89,6 @@
       "state" : {
         "revision" : "a0bc79961d7be727d258d33d5a6b2f1023270ba1",
         "version" : "1.22.5"
-      }
-    },
-    {
-      "identity" : "live_view",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/syedqamara/live_view",
-      "state" : {
-        "revision" : "e79d4651979448520781f4fb36970edfa13cd6d8",
-        "version" : "1.0.10"
       }
     },
     {

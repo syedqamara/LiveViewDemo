@@ -25,6 +25,7 @@ public class FirebaseLivePhotoManager: FirebaseLivePhotoManagerProtocol {
         }
     }
     @Logger var logger
+    @Singleton var singleton
     private let config: StorageConfig?
     public init(config: StorageConfig) {
         self.config = config
@@ -157,10 +158,43 @@ public class FirebaseLivePhotoManager: FirebaseLivePhotoManagerProtocol {
             }
         }
     }
-    
+    struct FileInfo {
+        let name: String
+        let `extension`: String
+        init(name: String, `extension`: String) {
+            self.name = name
+            self.extension = `extension`
+        }
+        var fileName: String { "\(name).\(self.extension)" }
+    }
+    func getFileInfo(url: URL) throws -> FileInfo {
+        let lastPath = url.lastPathComponent
+        let name = lastPath.components(separatedBy: ".").first
+        let ext = lastPath.components(separatedBy: ".").first
+        if let name, let ext {
+            return FileInfo(name: name, extension: ext)
+        }
+        throw CoreErrorInfo(description: "Invalid file name in URL", code: "url-found-invalid-file-name")
+    }
     // Download files (image and video) to local URLs
+    var cancellables: Set<AnyCancellable> = .init()
+    fileprivate func getAlreadyDownloadedURLs(urls: LiveImageURLs) -> LiveImageURLs? {
+        @Defaults(.custom(urls.image.absoluteString)) var imagePath: String?
+        @Defaults(.custom(urls.video.absoluteString)) var videoPath: String?
+        
+        guard let imagePath, let imageURL = URL(string: imagePath), let videoPath, let videoURL = URL(string: videoPath) else {
+            return nil
+        }
+        return LiveImageURLs(image: imageURL, video: videoURL)
+    }
     public func download(urls: LiveImageURLs) -> Future<LiveImageURLs, CoreErrorInfo> {
-        Future { [weak self] promise in
+        cancellables.cancelAllOperations()
+        if let alreadySaveURLs = self.getAlreadyDownloadedURLs(urls: urls) {
+            return Future { promise in
+                promise(.success(alreadySaveURLs))
+            }
+        }
+        return Future { [weak self] promise in
             let group = DispatchGroup()
             
             var localImageURL: URL?
@@ -169,35 +203,63 @@ public class FirebaseLivePhotoManager: FirebaseLivePhotoManagerProtocol {
                 promise(.failure(CoreErrorInfo(description: "No Config found", code: "firebase-no-config-found")))
                 return
             }
-            let imageDestinationURL = FileManager.default.temporaryDirectory.appendingPathComponent("\(UUID().uuidString).\(config.imageExtension)")
-            let videoDestinationURL = FileManager.default.temporaryDirectory.appendingPathComponent("\(UUID().uuidString).mov")
             
             // Download image
             group.enter()
+            
             let imageTask = URLSession.shared.downloadTask(with: urls.image) { location, _, error in
+                guard let self else { return }
                 if let error = error {
                     promise(.failure(CoreErrorInfo(description: error.localizedDescription, code: "firebase-image-download-task-error")))
                 } else if let location = location {
                     do {
-                        try FileManager.default.moveItem(at: location, to: imageDestinationURL)
-                        localImageURL = imageDestinationURL
+                        let data = try Data(contentsOf: location)
+                        let filename = try self.getFileInfo(url: urls.image)
+                        let config = FileConfig(id: urls.image.absoluteString, name: filename.fileName, operation: .create(data), storageType: .permanent)
+                        self.singleton.fileHandler.operation(config: config)
+                            .receive(on: DispatchQueue.global(qos: .background))
+                            .sink { completion in
+                                group.leave()
+                                if case .failure(let error) = completion {
+                                    promise(.failure(error))
+                                }
+                            } receiveValue: { url in
+                                localImageURL = url
+                                
+                            }
+                            .store(in: &self.cancellables)
+
                     } catch {
                         promise(.failure(CoreErrorInfo(description: error.localizedDescription, code: "local-image-save-error")))
+                        group.leave()
                     }
                 }
-                group.leave()
             }
             imageTask.resume()
             
             // Download video
             group.enter()
             let videoTask = URLSession.shared.downloadTask(with: urls.video) { location, _, error in
+                guard let self else { return }
                 if let error = error {
                     promise(.failure(CoreErrorInfo(description: error.localizedDescription, code: "firebase-video-download-task-error")))
                 } else if let location = location {
                     do {
-                        try FileManager.default.moveItem(at: location, to: videoDestinationURL)
-                        localVideoURL = videoDestinationURL
+                        let data = try Data(contentsOf: location)
+                        let filename = try self.getFileInfo(url: urls.video)
+                        let config = FileConfig(id: urls.video.absoluteString, name: filename.fileName, operation: .create(data), storageType: .permanent)
+                        self.singleton.fileHandler.operation(config: config)
+                            .receive(on: DispatchQueue.global(qos: .background))
+                            .sink { completion in
+                                group.leave()
+                                if case .failure(let error) = completion {
+                                    promise(.failure(error))
+                                }
+                            } receiveValue: { url in
+                                localVideoURL = url
+                                
+                            }
+                            .store(in: &self.cancellables)
                     } catch {
                         promise(.failure(CoreErrorInfo(description: error.localizedDescription, code: "local-video-save-error")))
                     }

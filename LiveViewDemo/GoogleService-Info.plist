@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>API_KEY</key>
+	<string>AIzaSyAZV-YWiRJEwDDg9Zsc0y4B_9sGCrlxWm0</string>
+	<key>GCM_SENDER_ID</key>
+	<string>142445531860</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.demo.liveview.LiveViewDemo</string>
+	<key>PROJECT_ID</key>
+	<string>livephotdemo</string>
+	<key>STORAGE_BUCKET</key>
+	<string>livephotdemo.firebasestorage.app</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:142445531860:ios:d57f3e2c2bfec3c9126141</string>
+</dict>
+</plist>

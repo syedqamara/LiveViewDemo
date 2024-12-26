@@ -7,6 +7,7 @@
 
 import SwiftUI
 import live_view
+import Firebase
 
 @main
 struct LiveViewDemoApp: App {
@@ -16,13 +17,20 @@ struct LiveViewDemoApp: App {
     
     @State var isAlertDismissed = false
     init() {
-        
+        appManager.singleton.thirdPartySDK?.firebaseSDK?.connector.initialise()
+            .receive(on: DispatchQueue.main)
+            .sink(receiveCompletion: { _ in
+                
+            }, receiveValue: { isConnected in
+                
+            })
+            .store(in: &appManager.cancellables)
     }
     var body: some Scene {
         WindowGroup {
             NavigationStack {
                 // Displaying a view that load images from bundle see `ViewFactory+Photos.swift`
-                viewFactory.swiftUI(input: .bundle)
+                viewFactory.swiftUI(input: .images([]))
                     .environment(\.viewFactory, viewFactory)
                     .environment(\.managedObjectContext, persistenceController.container.viewContext)
             }
